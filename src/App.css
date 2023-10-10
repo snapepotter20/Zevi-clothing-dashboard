@@ -1,38 +1,226 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  /* overflow-y: hidden;
+  overflow-x: hidden; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product:hover .product-button {
+  visibility: visible;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dashboard {
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+  /* border: 1px solid red; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.dashboard_input {
+     /* height: 40px; */
+     width: 46vw;
+     margin: 12px;
+     border-radius: 10px;
+     border: none;
+     padding: 18px;
+}
+
+.dashboard_search_btn {
+  width: 50px !important;
+  border-left: 1px solid lightgray;
+  color: gray;
+  margin-left: -8%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.dashboard_div {
+  /* display: flex; */
+  align-items: center;
+  /* border: 1px solid yellow; */
+  position: absolute;
+  z-index: 2;
+  top: 25%;
+  left: 25%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image {
+  width: 100%;
+  /* height: 100%; */
+  opacity: 0.7;
+}
+
+.suggestion-box {
+  border: 1px solid red;
+  width: 750px;
+  z-index: 2;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  text-align: left;
+  padding-left: 4%;
+  padding-top: 2%;
+  margin-left: -6%;
+}
+
+.avatars {
+  display: flex;
+  flex-direction: column;
+  /* width: 200px; */
+}
+
+.avatars_img {
+  width: 120px;
+  margin: 1%;
+  opacity: 0.8;
+}
+
+/* .avatars_div {
+  display: flex;
+}
+.avatars_div_box {
+  display: flex;
+  flex-direction: column;
+} */
+
+.sidebar{
+  flex: 25%;
+  font: normal 400 16px Roboto;
+}
+
+.sidebar > hr {
+  height: 1px;
+  border: 0;
+  background-color: lightgray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sidebar_h1 {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.sidebar_headings {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+.sidebarRow{
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+}
+
+.sidebarRow__icon{
+  font-size: large !important;
+  color: #606060;
+}
+
+.sidebarRow__title{
+  flex: 1;
+  margin-left: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: gray;
+}
+
+.sidebarRow:hover{
+  background-color: lightgrey;
+  cursor: pointer;
+
+}
+
+.sidebarRow:hover > .sidebarRow__icon{
+  color: black;
+}
+
+.sidebarRow.selected{
+  background-color: rgb(231, 230, 230);
+}
+
+.sidebarRow.selected > .sidebarRow__icon{
+ color: black;
+}
+
+
+.product_input {
+  width: 30vw;
+  margin: 12px;
+  margin-left: 35%;
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding: 18px;
+}
+
+.product_search_btn {
+  width: 50px !important;
+  border-left: 1px solid lightgray;
+  color: gray;
+  margin-left: -5%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.products {
+  /* border: 1px solid black; */
+  /* flex: 0.75; */
+  flex-basis: 75%;
+  background-color: #f9f9f9;
+  padding: 10px;
+  /* padding-bottom: 0; */
+  /* width: 100%; */
+}
+
+.product_div {
+  display: flex;
+}
+
+.products_avatars_div {
+  display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+    /* width: 100%; */
+    /* border: 1px solid blue; */
+    flex-wrap: wrap;
+}
+
+.products_avatars_img {
+  width: 100%;
+  height: 68%;
+  /* margin: 3%; */
+  /* margin-top: 1%; */
+  /* opacity: 0.8; */
+}
+
+/* ImageWithIcon.css */
+.image-container {
+  flex-basis: calc(30% - 8px);
+  margin: 8px;
+  position: relative;
+}
+
+
+.icon-overlay {
+  position: absolute;
+  /* width: 50%; */
+  /* height: 50%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 2; */
+  top: 0;
+  right: 0;
+  /* left: 83%; */
+}
+
+.icon {
+  color: rgb(255, 253, 253); 
+  padding: 5px; 
+  cursor: pointer;
 }

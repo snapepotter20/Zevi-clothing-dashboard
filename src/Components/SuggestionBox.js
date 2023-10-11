@@ -4,6 +4,8 @@ const SuggestionBox = ({ filterValue }) => {
   const [avatars, setAvatars] = useState([]);
   const [firstName, setFirstName] = useState([]);
   const [lastName, setLastName] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
+
 
   useEffect(() => {
     console.log('filterValue',filterValue);
@@ -20,9 +22,13 @@ const SuggestionBox = ({ filterValue }) => {
       });
   }, []);
 
-    const filteredItems = firstName.filter((item) =>
-     item.toLowerCase().includes(filterValue.toLowerCase())
-  );
+  useEffect(() => {
+    const filtered = firstName.filter((item) =>
+      item.toLowerCase().includes(filterValue.toLowerCase())
+    );
+    setFilteredItems(filtered);
+  }, [filterValue, firstName]);
+
 
   return (
     <div className="suggestion-box">

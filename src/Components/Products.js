@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ProductCard } from "./ProductCard";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import Rating from "@material-ui/lab/Rating";
-import StarRateIcon from '@material-ui/icons/StarRate';
+import StarRateIcon from "@material-ui/icons/StarRate";
 // import { Style } from "@material-ui/icons";
 
 const Products = () => {
@@ -12,6 +11,7 @@ const Products = () => {
   const [lastName, setLastName] = useState([]);
   const [bgColor, setBgColor] = useState("white");
   const [colorIndex, setColorIndex] = useState(-1);
+  const [hover, setHover] = useState();
 
   useEffect(() => {
     fetch("https://reqres.in/api/users?page=2")
@@ -43,6 +43,9 @@ const Products = () => {
               src={avatar}
               alt={`Avatar ${index}`}
               className="products_avatars_img"
+              key={index}
+              onMouseEnter={() => setHover(index)}
+              onMouseLeave={() => setHover(-1)}
             />
             {ProductCard.map((item) => (
               <div>
@@ -66,6 +69,7 @@ const Products = () => {
                     style={{ marginLeft: "-5px" }}
                     readOnly
                   />
+                  <p>(210)</p>
                 </div>
               </div>
             ))}
@@ -77,9 +81,11 @@ const Products = () => {
                 style={{ color: colorIndex === index ? bgColor : "#fff" }}
               />
             </div>
+            {hover === index && (
+              <button className="view_product">View Product</button>
+            )}
           </div>
         ))}
-        {/* </div> */}
       </div>
     </div>
   );

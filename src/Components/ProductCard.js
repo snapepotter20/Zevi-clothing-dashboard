@@ -6,7 +6,6 @@ export const ProductCard = [
   {
     title:'Round neck cotton tee',
     price:'Rs.549',
-    // rating: <StarIcon/>,
    },
 ]
  

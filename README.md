@@ -1,3 +1,18 @@
+<h1>Here are some screenshots to get some insight.</h1>
+<br/>
+
+![Screenshot (40)](https://github.com/snapepotter20/Zevi-clothing-dashboard/assets/67713177/aa52ed0f-643a-477e-8d46-227c0b7e025d)
+<br/>
+![Screenshot (41)](https://github.com/snapepotter20/Zevi-clothing-dashboard/assets/67713177/326999ad-2b4b-4f7b-9d0b-b48d452923b3)
+<br/>
+![Screenshot (42)](https://github.com/snapepotter20/Zevi-clothing-dashboard/assets/67713177/bc5ff080-b95d-4b8b-a500-412b019583df)
+<br/>
+![Screenshot (43)](https://github.com/snapepotter20/Zevi-clothing-dashboard/assets/67713177/48e993ee-7230-44b6-8ed3-4aaf925673e0)
+<br/>
+![Screenshot (44)](https://github.com/snapepotter20/Zevi-clothing-dashboard/assets/67713177/87e2385d-4f02-43c4-9406-2933afb8d7f8)
+<br/>
+![Screenshot (46)](https://github.com/snapepotter20/Zevi-clothing-dashboard/assets/67713177/bf97acfa-aa2c-48be-9191-93d58d30fdef)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ProductCard } from "./ProductCard";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import FavoriteIcon from "@material-ui/icons/FavoriteBorder";
 import Rating from "@material-ui/lab/Rating";
 import StarRateIcon from "@material-ui/icons/StarRate";
 // import { Style } from "@material-ui/icons";
@@ -69,14 +69,15 @@ const Products = () => {
                     style={{ marginLeft: "-5px" }}
                     readOnly
                   />
-                  <p>(210)</p>
+                  <p>{Math.floor(Math.random() * (2000 - 60 + 1)) + 60}</p>
                 </div>
               </div>
             ))}
             <div className="icon-overlay">
-              <FavoriteBorderIcon
+              <FavoriteIcon
                 fontSize="medium"
                 className="icon"
+                variant="filled"
                 onClick={() => changeBgColor(index)}
                 style={{ color: colorIndex === index ? bgColor : "#fff" }}
               />

@@ -8,10 +8,11 @@ const Dashboard = () => {
     const [flag,setFlag]=useState(false);
     const [filterValue, setFilterValue] = useState('');
     const showSuggestion=()=>{
-       setFlag(!flag);
+       setFlag(true);
     }
     const navigateProductList=()=>{
-       navigate('/productlist')
+      if(filterValue.length > 0)
+       navigate('/productlist');
     }
     const handleInputChange = (e) => {
         setFilterValue(e.target.value);
@@ -21,9 +22,8 @@ const Dashboard = () => {
       <div className="dashboard">
         <img src={bG1} alt="bg-img" className="image" />
         <div className="dashboard_div">
-        <input className="dashboard_input" onClick={showSuggestion}/>
-        <SearchIcon onClick={navigateProductList} className="dashboard_search_btn" value={filterValue}
-        onChange={handleInputChange}/>
+        <input className="dashboard_input" value={filterValue} onClick={showSuggestion} onChange={handleInputChange}/>
+        <SearchIcon onClick={navigateProductList} className="dashboard_search_btn"/>
         {flag?<SuggestionBox filterValue={filterValue}/>:null}
         </div>
 

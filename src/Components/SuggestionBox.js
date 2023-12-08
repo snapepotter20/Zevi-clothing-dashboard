@@ -3,12 +3,10 @@ import React, { useEffect, useState } from "react";
 const SuggestionBox = ({ filterValue }) => {
   const [avatars, setAvatars] = useState([]);
   const [firstName, setFirstName] = useState([]);
-  const [lastName, setLastName] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
 
-
   useEffect(() => {
-    console.log('filterValue',filterValue);
+    console.log("filterValue", filterValue);
     fetch("https://reqres.in/api/users?page=2")
       .then((response) => response.json())
       .then((data) => {
@@ -17,8 +15,7 @@ const SuggestionBox = ({ filterValue }) => {
         const first = data.data.map((user) => user.first_name);
         const last = data.data.map((user) => user.last_name);
         setAvatars(avatarList);
-        setFirstName(first);
-        setLastName(last);
+        setFirstName([...first, ...last]);
       });
   }, []);
 
@@ -28,7 +25,6 @@ const SuggestionBox = ({ filterValue }) => {
     );
     setFilteredItems(filtered);
   }, [filterValue, firstName]);
-
 
   return (
     <div className="suggestion-box">
@@ -41,10 +37,13 @@ const SuggestionBox = ({ filterValue }) => {
         </div>
         <div>
           <h3>Popular suggestions</h3>
-          {filteredItems
-            .map((item, index) => (
-              <p key={index}>{item}</p>
+          <div className="suggestions">
+            {filteredItems.map((item, index) => (
+              <div className="suggestion">
+                <p key={index}>{item}</p>
+              </div>
             ))}
+          </div>
         </div>
       </div>
     </div>

@@ -47,10 +47,10 @@ const Products = () => {
               onMouseEnter={() => setHover(index)}
               onMouseLeave={() => setHover(-1)}
             />
-            {ProductCard.map((item) => (
+            {ProductCard.map((item,index) => (
               <div>
-                <p>{"Turtle " + item.title}</p>
-                <p>
+                <p key={index}>{"Turtle " + item.title}</p>
+                <p key={index}>
                   {" "}
                   <strike>Rs.899</strike> {item.price}
                 </p>
@@ -69,7 +69,7 @@ const Products = () => {
                     style={{ marginLeft: "-5px" }}
                     readOnly
                   />
-                  <p>{Math.floor(Math.random() * (2000 - 60 + 1)) + 60}</p>
+                  <p style={{color:'#646464'}}>{Math.floor(Math.random() * (2000 - 60 + 1)) + 60}</p>
                 </div>
               </div>
             ))}

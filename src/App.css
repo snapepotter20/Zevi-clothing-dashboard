@@ -75,7 +75,17 @@ body {
 
 .avatars_img:hover {
   cursor: pointer;
-  margin: 2%;
+  margin: 10px;
+}
+
+.suggestions {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+.suggestion {
+  flex-basis: 25%
 }
 
 .sidebar{

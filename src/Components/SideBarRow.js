@@ -5,34 +5,34 @@ import Rating from "@material-ui/lab/Rating";
 const SideBarRow = ({ Icon, title }) => {
   let ratingComponent = null;
 
-  if (title === "*****") {
+  if (title === 5) {
     ratingComponent = (
       <Rating
         size="small"
         icon={<StarRateIcon />}
-        value={5}
+        value={title}
         precision={0.5}
         style={{ marginLeft: "2px" }}
         readOnly
       />
     );
-  } else if (title === "****") {
+  } else if (title === 4) {
     ratingComponent = (
       <Rating
         size="small"
         icon={<StarRateIcon />}
-        value={4}
+        value={title}
         precision={0.5}
         style={{ marginLeft: "2px" }}
         readOnly
       />
     );
-  } else if (title === "***") {
+  } else if (title === 3) {
     ratingComponent = (
       <Rating
         size="small"
         icon={<StarRateIcon />}
-        value={3}
+        value={title}
         precision={0.5}
         style={{ marginLeft: "2px" }}
         readOnly
@@ -43,11 +43,12 @@ const SideBarRow = ({ Icon, title }) => {
   return (
     <div className={"sidebarRow"}>
       {Icon && <Icon className="sidebarRow__icon" />}
-      {title === "*****" || title === "****" || title === "***" ? (
+      {title === 5 || title === 4 || title === 3 ? (
         ratingComponent
       ) : (
         <p className="sidebarRow__title">{title}</p>
       )}
+      
     </div>
   );
 };
